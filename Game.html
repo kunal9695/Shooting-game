@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <script src="Game.js"></script>
+    <title>Game Arena</title>
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Two Player Shooting Game</h1>
+    </div>
+    <div class="team">
+        <div class="team1">
+            <h1 class="team-h">Team 1</h1>
+            <button onclick="updateScore(1)" class="btn" id="shoot1">Shoot</button>
+            <br>
+            <br>
+            <h2 class="score">Score : <span style="font-size: 50px;" id="score1">100</span></h2>
+            <br>
+        </div>
+        <div class="team2">
+            <h1 class="team-h">Team 2</h1>
+            <button onclick="updateScore(0)" class="btn" id="shoot2">Shoot</button>
+            <br>
+            <br>
+            <h2 class="score">Score : <span style="font-size: 50px;" id="score2">100</span></h2>
+            <br>
+        </div>
+    </div>
+</body>
+
+</html>

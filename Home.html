@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <!-- <script src="Game.js"></script> -->
+    <title>Shooting Game</title>
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Two Player Shooting Game</h1>
+    </div>
+    <div class="start-game">
+        <div class="start">
+            <a href="Game.html"> <button class="btn">Start Game</button> </a>
+        </div>
+        <div class="restart">
+            <a href="Game.html"> <button class="btn" onclick="refresh()">Re-Start Game</button> </a>
+        </div>
+    </div>
+    <div class="score">
+        <div class="player1">
+            <h2 class="btn-1">Player 1</h2>
+            <p class="score-p"><b>Score:</b> <span id="wins1" style="font-size: 40px;">0</span></p>
+        </div>
+        <div class="player2">
+            <h2 class="btn-1">Player 2</h2>
+            <p class="score-p"><b>Score:</b> <span id="wins2" style="font-size: 40px;">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        var p1 = 0;
+        var p2 = 0;
+        var wins = JSON.parse(localStorage.getItem("wins"));
+        p1 = parseInt(wins[0]);
+        p2 = parseInt(wins[1]);
+        localStorage.setItem("player1", p1);
+        localStorage.setItem("player2", p2);
+        document.getElementById("wins1").innerHTML = p1;
+        document.getElementById("wins2").innerHTML = p2;
+
+
+
+        if (p1 == 3)
+            alert("Player 1 won the game. Please restart for new game.");
+        else if (p2 == 3)
+            alert("Player 2 won the game. Please restart for new game.");
+    </script>
+
+    <script>
+        function refresh() {
+            localStorage.setItem("player1", 0);
+            localStorage.setItem("player2", 0);
+            localStorage.setItem("wins", JSON.stringify([0, 0]));
+        }
+    </script>
+</body>
+
+</html>
